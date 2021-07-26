@@ -43,6 +43,3 @@ sms:
   username: prodAdmin
   password: tes!csget35#d
   baseUrl: https://xm7.cn
-logging:
-  level:
-    com.xxl.job.admin.dao: debug

@@ -6,6 +6,61 @@ package com.xxl.job.admin.core.model;
  * @author 何嘉豪
  */
 public class SmsRequest {
+
+    /**
+     * 用户名
+     */
+    private String username;
+    /**
+     * 密码
+     */
+    private String password;
+    /**
+     * 公司号
+     */
+    private Long companyNum = 900000001L;
+    /**
+     * 业务类型
+     */
+    private Integer bsType = 99;
+    /**
+     * 类型 0 营销类 1 通知类
+     */
+    private Integer type = 0;
+    /**
+     * 手机号
+     */
+    private String phoneNum;
+    /**
+     * 发送内容
+     */
+    private String content;
+    /**
+     * 短信签名
+     */
+    private String sign;
+    /**
+     * 公司额外码
+     */
+    private String sa;
+    /**
+     * 平台类型 0 星麦
+     */
+    private Integer platformType = 0;
+    /**
+     * 事务 id
+     */
+    private String transactionId;
+
+    private SmsRequest(Builder builder) {
+        this.phoneNum = builder.phoneNum;
+        this.content = builder.content;
+    }
+
+    public static Builder builder(String phoneNum, String content) {
+        return new Builder(phoneNum, content);
+    }
+
     public String getUsername() {
         return username;
     }
@@ -94,59 +149,19 @@ public class SmsRequest {
         this.transactionId = transactionId;
     }
 
-    /**
-     * 用户名
-     */
-    private String username;
+    public static class Builder {
 
-    /**
-     * 密码
-     */
-    private String password;
+        private final String phoneNum;
 
-    /**
-     * 公司号
-     */
-    private Long companyNum;
+        private final String content;
 
-    /**
-     * 业务类型
-     */
-    private Integer bsType;
+        private Builder(String phoneNum, String content) {
+            this.phoneNum = phoneNum;
+            this.content = content;
+        }
 
-    /**
-     * 类型 0 营销类 1 通知类
-     */
-    private Integer type;
-
-    /**
-     * 手机号
-     */
-    private String phoneNum;
-
-    /**
-     * 发送内容
-     */
-    private String content;
-
-    /**
-     * 短信签名
-     */
-    private String sign;
-
-    /**
-     * 公司额外码
-     */
-    private String sa;
-
-    /**
-     * 平台类型 0 星麦
-     */
-    private Integer platformType;
-
-    /**
-     * 事务 id
-     */
-    private String transactionId;
-
+        public SmsRequest build() {
+            return new SmsRequest(this);
+        }
+    }
 }

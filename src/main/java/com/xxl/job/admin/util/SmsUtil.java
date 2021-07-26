@@ -128,7 +128,7 @@ public class SmsUtil {
 
     public SmsResult sendSms(SmsRequest smsRequest) {
         if (!StringUtils.hasText(smsRequest.getSign())) {
-            smsRequest.setSign("星麦云店");
+            smsRequest.setSign("星麦云商");
         }
         smsRequest.setUsername(username);
         smsRequest.setPassword(password);

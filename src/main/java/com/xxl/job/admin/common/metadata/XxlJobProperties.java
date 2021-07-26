@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 public class XxlJobProperties {
 
     private final TriggerPool triggerPool = new TriggerPool();
-    private String accessToken = "''";
+    private String accessToken = "";
     private String i18n = "zh_CN";
     private Integer logRetentionDays = 30;
 

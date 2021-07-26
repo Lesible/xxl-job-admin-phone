@@ -8,6 +8,7 @@ import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
+import org.springframework.lang.NonNull;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -35,12 +36,11 @@ public class JobAlarmHandler implements ApplicationContextAware, InitializingBea
     }
 
 
-    public boolean alarm(XxlJobInfo info, XxlJobLog jobLog) {
-
+    public boolean alarm(@NonNull XxlJobInfo info, XxlJobLog jobLog) {
         boolean result = false;
-        if (jobAlarmList!=null && jobAlarmList.size()>0) {
+        if (jobAlarmList != null && jobAlarmList.size() > 0) {
             result = true;  // success means all-success
-            for (JobAlarm alarm: jobAlarmList) {
+            for (JobAlarm alarm : jobAlarmList) {
                 boolean resultItem = false;
                 try {
                     resultItem = alarm.doAlarm(info, jobLog);
