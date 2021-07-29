@@ -5,7 +5,7 @@ management:
 mybatis:
   mapper-locations: classpath:/mybatis-mapper/*Mapper.xml
 server:
-  port: 8080
+  port: 12321
   servlet:
     context-path: /xxl-job-admin
 spring:

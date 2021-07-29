@@ -116,6 +116,7 @@
     </dependencies>
 
     <build>
+        <finalName>xxl-job-admin-sms</finalName>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
