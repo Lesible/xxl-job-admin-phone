@@ -22,9 +22,9 @@ spring:
       pool-name: HikariCP
       validation-timeout: 1000
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:mysql://192.168.110.118/xxl_job?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://172.16.0.42/xxl_job?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai
     username: root
-    password: 123456
+    password: test123456
   freemarker:
     charset: UTF-8
     request-context-attribute: request

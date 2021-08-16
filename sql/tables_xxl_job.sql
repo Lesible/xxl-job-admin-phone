@@ -15,7 +15,7 @@ CREATE TABLE `xxl_job_info`
     `add_time`                  datetime              DEFAULT NULL,
     `update_time`               datetime              DEFAULT NULL,
     `author`                    varchar(64)           DEFAULT NULL COMMENT '作者',
-    `phone_num`                 varchar(255)          DEFAULT NULL COMMENT '报警邮件',
+    `phone_num`                 varchar(255)          DEFAULT NULL COMMENT '报警手机号',
     `schedule_type`             varchar(50)  NOT NULL DEFAULT 'NONE' COMMENT '调度类型',
     `schedule_conf`             varchar(128)          DEFAULT NULL COMMENT '调度配置，值含义取决于调度类型',
     `misfire_strategy`          varchar(50)  NOT NULL DEFAULT 'DO_NOTHING' COMMENT '调度过期策略',
