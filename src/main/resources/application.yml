@@ -43,3 +43,7 @@ sms:
   username: prodAdmin
   password: tes!csget35#d
   baseUrl: https://xm7.cn
+
+omg:
+  api-secret: 0xqyvkOtUyJAYrA5
+  base-url: https://omg.sumwhy.com/manager/openApi/
