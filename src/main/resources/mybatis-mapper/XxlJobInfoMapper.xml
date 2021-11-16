@@ -9,7 +9,8 @@
         <result column="add_time" property="addTime"/>
         <result column="update_time" property="updateTime"/>
         <result column="author" property="author"/>
-        <result column="phone_num" property="phoneNum"/>
+        <result column="alarm_type" property="alarmType"/>
+        <result column="alarm_address" property="alarmAddress"/>
         <result column="schedule_type" property="scheduleType"/>
         <result column="schedule_conf" property="scheduleConf"/>
         <result column="misfire_strategy" property="misfireStrategy"/>
@@ -36,7 +37,8 @@
         t.add_time,
         t.update_time,
         t.author,
-        t.phone_num,
+        t.alarm_type,
+        t.alarm_address,
         t.schedule_type,
         t.schedule_conf,
         t.misfire_strategy,
@@ -109,7 +111,8 @@
                                   add_time,
                                   update_time,
                                   author,
-                                  phone_num,
+                                  alarm_type,
+                                  alarm_address,
                                   schedule_type,
                                   schedule_conf,
                                   misfire_strategy,
@@ -132,7 +135,8 @@
                 #{addTime},
                 #{updateTime},
                 #{author},
-                #{phoneNum},
+                #{alarmType},
+                #{alarmAddress},
                 #{scheduleType},
                 #{scheduleConf},
                 #{misfireStrategy},
@@ -169,7 +173,8 @@
             job_desc                  = #{jobDesc},
             update_time               = #{updateTime},
             author                    = #{author},
-            phone_num                 = #{phoneNum},
+            alarm_type                = #{alarmType},
+            alarm_address             = #{alarmAddress},
             schedule_type             = #{scheduleType},
             schedule_conf             = #{scheduleConf},
             misfire_strategy          = #{misfireStrategy},

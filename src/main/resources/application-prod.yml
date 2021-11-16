@@ -1,0 +1,5 @@
+spring:
+  datasource:
+    url: jdbc:mysql://172.16.0.12/xxl_job?useUnicode=true&characterEncoding=UTF-8&autoReconnect=true&serverTimezone=Asia/Shanghai
+    username: root
+    password: ENC(hLaqIMLQlBK288mqAo2EKBCtliyCgz4/w86XQalpkqccaFLl4reDMvtU4Ffl4IwedrU7yFD9puDH1NWBYh5DAg==)

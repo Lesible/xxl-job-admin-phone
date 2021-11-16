@@ -9,6 +9,9 @@ import org.springframework.lang.NonNull;
  */
 public interface JobAlarm {
 
+    Integer getAlarmType();
+
     boolean doAlarm(@NonNull XxlJobInfo info, XxlJobLog jobLog);
 
+    void doAlarm(XxlJobInfo xxlJobInfo, String msg);
 }

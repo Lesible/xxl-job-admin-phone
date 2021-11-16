@@ -14,6 +14,7 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 
 @Component
 public class JobAlarmHandler implements ApplicationContextAware, InitializingBean {
@@ -53,6 +54,16 @@ public class JobAlarmHandler implements ApplicationContextAware, InitializingBea
             }
         }
         return result;
+    }
+
+    public void alarm(XxlJobInfo xxlJobInfo, String msg) {
+        if (jobAlarmList != null && jobAlarmList.size() > 0) {
+            for (JobAlarm jobAlarm : jobAlarmList) {
+                if (Objects.equals(jobAlarm.getAlarmType(), xxlJobInfo.getAlarmType())) {
+                    jobAlarm.doAlarm(xxlJobInfo, msg);
+                }
+            }
+        }
     }
 
 }

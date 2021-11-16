@@ -76,27 +76,27 @@
 			            <div class="box-body" >
 			              	<table id="job_list" class="table table-bordered table-striped" width="100%" >
 				                <thead>
-					            	<tr>
-					            		<th name="id" >${I18n.jobinfo_field_id}</th>
-					                	<th name="jobGroup" >${I18n.jobinfo_field_jobgroup}</th>
-					                  	<th name="jobDesc" >${I18n.jobinfo_field_jobdesc}</th>
-                                        <th name="scheduleType" >${I18n.schedule_type}</th>
-                                        <th name="glueType" >${I18n.jobinfo_field_gluetype}</th>
-                                        <th name="executorParam" >${I18n.jobinfo_field_executorparam}</th>
-					                  	<th name="addTime" >addTime</th>
-					                  	<th name="updateTime" >updateTime</th>
-					                  	<th name="author" >${I18n.jobinfo_field_author}</th>
-					                  	<th name="phoneNum" >${I18n.jobinfo_field_phone_num}</th>
-					                  	<th name="triggerStatus" >${I18n.system_status}</th>
-					                  	<th>${I18n.system_opt}</th>
-					                </tr>
-				                </thead>
-				                <tbody></tbody>
-				                <tfoot></tfoot>
-							</table>
-						</div>
-					</div>
-				</div>
+                                <tr>
+                                    <th name="id">${I18n.jobinfo_field_id}</th>
+                                    <th name="jobGroup">${I18n.jobinfo_field_jobgroup}</th>
+                                    <th name="jobDesc">${I18n.jobinfo_field_jobdesc}</th>
+                                    <th name="scheduleType">${I18n.schedule_type}</th>
+                                    <th name="glueType">${I18n.jobinfo_field_gluetype}</th>
+                                    <th name="executorParam">${I18n.jobinfo_field_executorparam}</th>
+                                    <th name="addTime">addTime</th>
+                                    <th name="updateTime">updateTime</th>
+                                    <th name="author">${I18n.jobinfo_field_author}</th>
+                                    <th name="alarmAddress">${I18n.jobinfo_field_address}</th>
+                                    <th name="triggerStatus">${I18n.system_status}</th>
+                                    <th>${I18n.system_opt}</th>
+                                </tr>
+                                </thead>
+                                <tbody></tbody>
+                                <tfoot></tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
 			</div>
 	    </section>
 	</div>
@@ -122,26 +122,46 @@
 							<select class="form-control" name="jobGroup" >
 		            			<#list JobGroupList as group>
 		            				<option value="${group.id}" <#if jobGroup==group.id>selected</#if> >${group.title}</option>
-		            			</#list>
-		                  	</select>
-						</div>
+                                </#list>
+                            </select>
+                        </div>
 
-                        <label for="lastname" class="col-sm-2 control-label">${I18n.jobinfo_field_jobdesc}<font color="red">*</font></label>
-                        <div class="col-sm-4"><input type="text" class="form-control" name="jobDesc" placeholder="${I18n.system_please_input}${I18n.jobinfo_field_jobdesc}" maxlength="50" ></div>
-					</div>
+                        <label for="lastname" class="col-sm-2 control-label">${I18n.jobinfo_field_jobdesc}<font
+                                    color="red">*</font></label>
+                        <div class="col-sm-4"><input type="text" class="form-control" name="jobDesc"
+                                                     placeholder="${I18n.system_please_input}${I18n.jobinfo_field_jobdesc}"
+                                                     maxlength="50"></div>
+                    </div>
                     <div class="form-group">
-                        <label for="lastname" class="col-sm-2 control-label">${I18n.jobinfo_field_author}<font color="red">*</font></label>
-                        <div class="col-sm-4"><input type="text" class="form-control" name="author" placeholder="${I18n.system_please_input}${I18n.jobinfo_field_author}" maxlength="50" ></div>
-                        <label for="lastname" class="col-sm-2 control-label">${I18n.jobinfo_field_phone_num}<font color="black">*</font></label>
-                        <div class="col-sm-4"><input type="text" class="form-control" name="phoneNum" placeholder="${I18n.jobinfo_field_phone_num_placeholder}" maxlength="100" ></div>
+                        <label for="lastname" class="col-sm-2 control-label">${I18n.jobinfo_field_author}<font
+                                    color="red">*</font></label>
+                        <div class="col-sm-4"><input type="text" class="form-control" name="author"
+                                                     placeholder="${I18n.system_please_input}${I18n.jobinfo_field_author}"
+                                                     maxlength="50"></div>
+                        <label for="lastname" class="col-sm-2 control-label">${I18n.jobinfo_field_address}<font
+                                    color="black">*</font></label>
+                        <div class="col-sm-4"><input type="text" class="form-control" name="alarmAddress"
+                                                     placeholder="${I18n.jobinfo_field_address_placeholder}"
+                                                     maxlength="100"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="firstname" class="col-sm-2 control-label">${I18n.jobinfo_field_alarm_type}<font
+                                    color="red">*</font></label>
+                        <div class="col-sm-4">
+                            <select class="form-control" name="alarmType">
+                                <option value="0">机器人</option>
+                                <option value="1">手机</option>
+                            </select>
+                        </div>
                     </div>
 
                     <br>
-                    <p style="margin: 0 0 10px;text-align: left;border-bottom: 1px solid #e5e5e5;color: gray;">${I18n.jobinfo_conf_schedule}</p>    <#-- 调度 -->
+                    <p style="margin: 0 0 10px;text-align: left;border-bottom: 1px solid #e5e5e5;color: gray;">${I18n.jobinfo_conf_schedule}</p> <#-- 调度 -->
                     <div class="form-group">
-                        <label for="firstname" class="col-sm-2 control-label">${I18n.schedule_type}<font color="red">*</font></label>
+                        <label for="firstname" class="col-sm-2 control-label">${I18n.schedule_type}<font
+                                    color="red">*</font></label>
                         <div class="col-sm-4">
-                            <select class="form-control scheduleType" name="scheduleType" >
+                            <select class="form-control scheduleType" name="scheduleType">
                                 <#list ScheduleTypeEnum as item>
                                     <option value="${item}" <#if 'CRON' == item >selected</#if> >${item.title}</option>
                                 </#list>
@@ -371,24 +391,44 @@ exit 0
                             </select>
                         </div>
 
-                        <label for="lastname" class="col-sm-2 control-label">${I18n.jobinfo_field_jobdesc}<font color="red">*</font></label>
-                        <div class="col-sm-4"><input type="text" class="form-control" name="jobDesc" placeholder="${I18n.system_please_input}${I18n.jobinfo_field_jobdesc}" maxlength="50" ></div>
+                        <label for="lastname" class="col-sm-2 control-label">${I18n.jobinfo_field_jobdesc}<font
+                                    color="red">*</font></label>
+                        <div class="col-sm-4"><input type="text" class="form-control" name="jobDesc"
+                                                     placeholder="${I18n.system_please_input}${I18n.jobinfo_field_jobdesc}"
+                                                     maxlength="50"></div>
                     </div>
                     <div class="form-group">
-                        <label for="lastname" class="col-sm-2 control-label">${I18n.jobinfo_field_author}<font color="red">*</font></label>
-                        <div class="col-sm-4"><input type="text" class="form-control" name="author" placeholder="${I18n.system_please_input}${I18n.jobinfo_field_author}" maxlength="50" ></div>
-                        <label for="lastname" class="col-sm-2 control-label">${I18n.jobinfo_field_phone_num}<font color="black">*</font></label>
-                        <div class="col-sm-4"><input type="text" class="form-control" name="phoneNum" placeholder="${I18n.jobinfo_field_phone_num_placeholder}" maxlength="100" ></div>
+                        <label for="lastname" class="col-sm-2 control-label">${I18n.jobinfo_field_author}<font
+                                    color="red">*</font></label>
+                        <div class="col-sm-4"><input type="text" class="form-control" name="author"
+                                                     placeholder="${I18n.system_please_input}${I18n.jobinfo_field_author}"
+                                                     maxlength="50"></div>
+                        <label for="lastname" class="col-sm-2 control-label">${I18n.jobinfo_field_address}<font
+                                    color="black">*</font></label>
+                        <div class="col-sm-4"><input type="text" class="form-control" name="alarmAddress"
+                                                     placeholder="${I18n.jobinfo_field_address_placeholder}"
+                                                     maxlength="100"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="firstname" class="col-sm-2 control-label">${I18n.jobinfo_field_alarm_type}<font
+                                    color="red">*</font></label>
+                        <div class="col-sm-4">
+                            <select class="form-control" name="alarmType">
+                                <option value="0">机器人</option>
+                                <option value="1">手机</option>
+                            </select>
+                        </div>
                     </div>
 
                     <br>
-                    <p style="margin: 0 0 10px;text-align: left;border-bottom: 1px solid #e5e5e5;color: gray;">${I18n.jobinfo_conf_schedule}</p>    <#-- 调度配置 -->
+                    <p style="margin: 0 0 10px;text-align: left;border-bottom: 1px solid #e5e5e5;color: gray;">${I18n.jobinfo_conf_schedule}</p> <#-- 调度配置 -->
                     <div class="form-group">
-                        <label for="firstname" class="col-sm-2 control-label">${I18n.schedule_type}<font color="red">*</font></label>
+                        <label for="firstname" class="col-sm-2 control-label">${I18n.schedule_type}<font
+                                    color="red">*</font></label>
                         <div class="col-sm-4">
-                            <select class="form-control scheduleType" name="scheduleType" >
+                            <select class="form-control scheduleType" name="scheduleType">
                                 <#list ScheduleTypeEnum as item>
-                                    <option value="${item}" >${item.title}</option>
+                                    <option value="${item}">${item.title}</option>
                                 </#list>
                             </select>
                         </div>

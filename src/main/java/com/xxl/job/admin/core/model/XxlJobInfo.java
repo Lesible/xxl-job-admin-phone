@@ -18,30 +18,67 @@ public class XxlJobInfo {
     private Date updateTime;
 
     private String author;        // 负责人
-    private String phoneNum;    // 报警邮件
-
+    /**
+     * 0 机器人 1 短信
+     */
+    private Integer alarmType;
+    private String alarmAddress;    // 报警邮件
     private String scheduleType;            // 调度类型
     private String scheduleConf;            // 调度配置，值含义取决于调度类型
     private String misfireStrategy;            // 调度过期策略
-
     private String executorRouteStrategy;    // 执行器路由策略
     private String executorHandler;            // 执行器，任务Handler名称
     private String executorParam;            // 执行器，任务参数
     private String executorBlockStrategy;    // 阻塞处理策略
     private int executorTimeout;            // 任务执行超时时间，单位秒
     private int executorFailRetryCount;        // 失败重试次数
-
     private String glueType;        // GLUE类型	#com.xxl.job.core.glue.GlueTypeEnum
     private String glueSource;        // GLUE源代码
     private String glueRemark;        // GLUE备注
     private Date glueUpdateTime;    // GLUE更新时间
-
     private String childJobId;        // 子任务ID，多个逗号分隔
-
     private int triggerStatus;        // 调度状态：0-停止，1-运行
     private long triggerLastTime;    // 上次调度时间
     private long triggerNextTime;    // 下次调度时间
 
+    public Integer getAlarmType() {
+        return alarmType;
+    }
+
+    public void setAlarmType(Integer alarmType) {
+        this.alarmType = alarmType;
+    }
+
+    @Override
+    public String toString() {
+        return "XxlJobInfo{" +
+                "id=" + id +
+                ", jobGroup=" + jobGroup +
+                ", jobDesc='" + jobDesc + '\'' +
+                ", addTime=" + addTime +
+                ", updateTime=" + updateTime +
+                ", author='" + author + '\'' +
+                ", alarmType=" + alarmType +
+                ", alarmAddress='" + alarmAddress + '\'' +
+                ", scheduleType='" + scheduleType + '\'' +
+                ", scheduleConf='" + scheduleConf + '\'' +
+                ", misfireStrategy='" + misfireStrategy + '\'' +
+                ", executorRouteStrategy='" + executorRouteStrategy + '\'' +
+                ", executorHandler='" + executorHandler + '\'' +
+                ", executorParam='" + executorParam + '\'' +
+                ", executorBlockStrategy='" + executorBlockStrategy + '\'' +
+                ", executorTimeout=" + executorTimeout +
+                ", executorFailRetryCount=" + executorFailRetryCount +
+                ", glueType='" + glueType + '\'' +
+                ", glueSource='" + glueSource + '\'' +
+                ", glueRemark='" + glueRemark + '\'' +
+                ", glueUpdateTime=" + glueUpdateTime +
+                ", childJobId='" + childJobId + '\'' +
+                ", triggerStatus=" + triggerStatus +
+                ", triggerLastTime=" + triggerLastTime +
+                ", triggerNextTime=" + triggerNextTime +
+                '}';
+    }
 
     public int getId() {
         return id;
@@ -91,12 +128,12 @@ public class XxlJobInfo {
         this.author = author;
     }
 
-    public String getPhoneNum() {
-        return phoneNum;
+    public String getAlarmAddress() {
+        return alarmAddress;
     }
 
-    public void setPhoneNum(String phoneNum) {
-        this.phoneNum = phoneNum;
+    public void setAlarmAddress(String alarmAddress) {
+        this.alarmAddress = alarmAddress;
     }
 
     public String getScheduleType() {

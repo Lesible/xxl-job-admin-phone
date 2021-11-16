@@ -6,6 +6,13 @@ package com.xxl.job.admin.core.model;
  * @author 何嘉豪
  */
 public class SmsResult {
+    private boolean success;
+    private Integer num;
+    private String id;
+    private String smsUsername;
+    private String platform;
+    private String code;
+
     @Override
     public String toString() {
         return "SmsResult{" +
@@ -17,18 +24,6 @@ public class SmsResult {
                 ", code='" + code + '\'' +
                 '}';
     }
-
-    private boolean success;
-
-    private Integer num;
-
-    private String id;
-
-    private String smsUsername;
-
-    private String platform;
-
-    private String code;
 
     public boolean isSuccess() {
         return success;
